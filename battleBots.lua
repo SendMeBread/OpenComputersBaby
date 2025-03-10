@@ -6,7 +6,7 @@ ms = component.motion_sensor
 ms.setSensitivity(0.5)
 while true do
     pos = nav.getPosition()
-    local _, address, x, y, z, name = event.pull(ms)
+    local _, address, x, y, z, name = event.pull(motion)
     local entity = world.getEntityAt(pos.x + x, pos.y + y, pos.z + z)
     if entity and entity.isHostile() then
         robot.useItem()
