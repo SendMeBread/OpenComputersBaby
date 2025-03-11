@@ -19,13 +19,10 @@ function isMobHostile(x, y, z)
 end
 while true do
     pos = nav.getPosition()
-    mobs = radar.getMobs()
-    for k,v in pairs(mobs) do
-        --[[if isMobHostile(pos.x+k.x, pos.y+k.y, pos.z+k.z) then
-            robot.move(pos.x+k.x-1, pos.y+k.y, pos.z+k.z)
+    mob = radar.getMobs()
+    if isMobHostile(pos.x+mob.x, pos.y+mob.y, pos.z+mob.z) then
+            robot.move(pos.x+mob.x-1, pos.y+mob.y, pos.z+mob.z)
             robot.swing()
-        end]]
-        print(k)
-        print(v)
     end
+    print(mob)
 end
