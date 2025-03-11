@@ -21,8 +21,8 @@ while true do
     pos = nav.getPosition()
     mob = radar.getMobs()
     if isMobHostile(pos.x+mob.x, pos.y+mob.y, pos.z+mob.z) then
-            robot.move(pos.x+mob.x-1, pos.y+mob.y, pos.z+mob.z)
-            robot.swing()
+        robot.move(pos.x+mob.x-1, pos.y+mob.y, pos.z+mob.z)
+        robot.swing()
     end
     print(mob)
 end
