@@ -1,5 +1,4 @@
 local robot = require("robot")
-local comp = require("component")
 local radar = require("component").radar
 local nav = require("component").navigation
 
