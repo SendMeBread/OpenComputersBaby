@@ -1,6 +1,6 @@
 local robot = require("robot")
-local radar = require("component").radar
-local nav = require("component").navigation
+radar = require("component").radar
+nav = require("component").navigation
 
 local hostileMobs = {"minecraft:zombie", "minecraft:skeleton", "minecraft:creeper", "minecraft:spider", "minecraft:witch", "minecraft:slime", "minecraft:cave_spider", "minecraft:zombie_villager", "minecraft:husk", "minecraft:silverfish", "minecraft:stray", "minecraft:evocation_illager", "minecraft:vindication_illager", "minecraft:illusion_illager", "minecraft:vex", "minecraft:guardian", "minecraft:elder_guardian", "minecraft:blaze", "minecraft:ghast", "minecraft:magma_cube", "minecraft:zombie_pigman", "minecraft:wither_skeleton", "minecraft:wither", "minecraft:enderman", "minecraft:endermite", "minecraft:shulker", "minecraft:ender_dragon"}
 
