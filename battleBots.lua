@@ -22,8 +22,8 @@ while true do
     mobs = radar.getMobs()
     for k,v in pairs(mobs) do
         if isMobHostile(pos.x+v[1], pos.y+v[2], pos.z+v[3]) then
-        robot.move(pos.x+v[1]-1, pos.y+v[2], pos.z+v[3])
-        robot.swing()
+            robot.move(pos.x+v[1]-1, pos.y+v[2], pos.z+v[3])
+            robot.swing()
         end
     end
 end
