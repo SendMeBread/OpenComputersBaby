@@ -36,4 +36,6 @@ function attackMob(is_motion, ms_x, ms_y, ms_z)
     drone.swing()
   end
 end
-event.listen('motion', attackMob)
+while true do
+  event.listen('motion', attackMob)
+end
