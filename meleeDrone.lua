@@ -1,5 +1,4 @@
 drone = component.proxy(component.list('drone')())
-nav = component.proxy(component.list('navigation')())
 event = component.proxy(component.list('event')())
 ms = component.proxy(component.list('motion_sensor')())
 ms.setSensitivity(0.2)
@@ -32,9 +31,8 @@ function isMobHostile(x, y, z)
 end
 
 function attackMob(is_motion, ms_x, ms_y, ms_z)
-  pos = nav.getPosition()
-  if isMobHostile(ms_x+pos.x, ms_y+pos.y, ms_z+pos.z) then
-    drone.move(ms_x+pos.x, ms_y+pos.y, ms_z+pos.z)
+  if isMobHostile(ms_x, ms_y, ms_z) then
+    drone.move(ms_x, ms_y, ms_z)
     drone.swing()
   end
 end
