@@ -30,7 +30,8 @@ function isMobHostile(x, y, z)
   end
 end
 
-function attackMob(is_motion, ms_x, ms_y, ms_z)
+function attackMob(is_motion, ms_x, ms_y, ms_z, name)
+  print(name)
   if isMobHostile(ms_x, ms_y, ms_z) then
     drone.move(ms_x, ms_y, ms_z)
     drone.swing()
