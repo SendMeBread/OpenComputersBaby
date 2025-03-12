@@ -6,7 +6,7 @@ ms.setSensitivity(0.2)
 local hostileMobs = {
   "minecraft:blaze",
   "minecraft:cave_spider", "minecraft:creeper",
-  "minecraft:elder_guardian", "minecraft:ender_dragon", "minecraft:enderman", "minecraft:endermite", "minecraft:evocation_illager,
+  "minecraft:elder_guardian", "minecraft:ender_dragon", "minecraft:enderman", "minecraft:endermite", "minecraft:evocation_illager",
   "minecraft:ghast", "minecraft:giant", "minecraft:guardian",
   "minecraft:husk",
   "minecraft:illusion_illager",
