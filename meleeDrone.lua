@@ -15,23 +15,7 @@ local hostileMobs = {
   "minecraft:witch", "minecraft:wither", "minecraft:wither_skeleton",
   "minecraft:zombie", "minecraft:zombie_pigman", "minecraft:zombie_villager"
 }
-function isMobHostile(x, y, z)
-  local entity = world.getEntity(x, y, z)
-  if entity ~= nil then
-    local entityType = entity.getEntityType()
-
-    for _, hostType in ipairs(hostileMobs) do
-      if entityType == hostType then
-        return true
-      end
-    end
-  else
-    return false
-  end
-end
-
 function attackMob(ms_x, ms_y, ms_z, name)
-  print(name)
   if isMobHostile(ms_x, ms_y, ms_z) then
     drone.move(ms_x, ms_y, ms_z)
     drone.swing()
