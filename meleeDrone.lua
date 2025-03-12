@@ -1,6 +1,6 @@
-drone = component.proxy(component.list('drone')())
-event = component.proxy(component.list('event')())
-ms = component.proxy(component.list('motion_sensor')())
+local drone = component.proxy(component.list('drone')())
+local event = component.proxy(component.list('event')())
+local ms = component.proxy(component.list('motion_sensor')())
 ms.setSensitivity(0.2)
 local hostileMobs = {
   "minecraft:blaze",
