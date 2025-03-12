@@ -32,7 +32,6 @@ function isMobHostile(x, y, z)
 end
 
 function attackMob(is_motion, ms_x, ms_y, ms_z)
-  print(is_motion)
   pos = nav.getPosition()
   if isMobHostile(ms_x+pos.x, ms_y+pos.y, ms_z+pos.z) then
     drone.move(ms_x+pos.x, ms_y+pos.y, ms_z+pos.z)
