@@ -30,7 +30,7 @@ function isMobHostile(x, y, z)
   end
 end
 
-function attackMob(is_motion, ms_x, ms_y, ms_z, name)
+function attackMob(ms_x, ms_y, ms_z, name)
   print(name)
   if isMobHostile(ms_x, ms_y, ms_z) then
     drone.move(ms_x, ms_y, ms_z)
@@ -38,5 +38,6 @@ function attackMob(is_motion, ms_x, ms_y, ms_z, name)
   end
 end
 while true do
-  event.listen('motion', attackMob)
+  local _, x, y, z, entName = event.pull("motion")
+  print(entName)
 end
