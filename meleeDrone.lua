@@ -37,5 +37,5 @@ function attackMob(is_motion, ms_x, ms_y, ms_z)
   end
 end
 while true do
-  event.listen('motion', attackMob())
+  event.listen('motion', attackMob)
 end
