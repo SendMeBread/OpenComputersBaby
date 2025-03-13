@@ -1,4 +1,4 @@
 while true do
   local _, x, y, z, entName = event.pull("motion")
-  print(entName)
+  robot.move(x, y, z)
 end
