@@ -1,7 +1,7 @@
 local drone = component.proxy(component.list('drone')())
 local nav = component.proxy(component.list('nagigation')())
 local ms = component.proxy(component.list('motion_sensor')())
-ms.setSensitivity(0.2)
+ms.setSensitivity(0.0)
 local hostileMobs = {
   "Blaze",
   "Cave Spider", "Creeper",
@@ -14,9 +14,6 @@ local hostileMobs = {
   "Witch", "Wither", "Wither Skeleton",
   "Zombie", "Zombie Pigman", "Zombie Villager"
 }
-function round(num, places)
-  return tonumber(string.format("%" .. places .. "f", num))
-end
 function isMobHostile(entName)
   for _, hostMob in ipairs(hostileMobs) do
     if entName == hostMob then
