@@ -1,4 +1,5 @@
 local drone = component.proxy(component.list('drone')())
+local nav = component.proxy(component.list('nagigation')())
 local ms = component.proxy(component.list('motion_sensor')())
 ms.setSensitivity(0.2)
 local hostileMobs = {
@@ -24,10 +25,28 @@ function isMobHostile(entName)
   end
   return false
 end
+function getFacing(x, y, z)
+  currx, curry, currz = nav.getPosition()
+  if currx >= currz then
+    if currx >= 0 then
+      return 5
+    else
+      return 4
+    end
+  elseif currx < currz then
+    if currz >= 0 then
+      return 3
+    else
+      return 2
+    end
+  end
+end
+    
+    
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
-    drone.swing(3)
+    drone.swing(getFacing(ms_x, ms_y, ms_z))
   end
 end
 while true do
@@ -35,5 +54,5 @@ while true do
   dx = tonumber(mx) or 0
   dy = tonumber(my) or 0
   dz = tonumber(mz) or 0
-  attackMob(round(dx, 0), round(dy, 0), round(dz, 0), mobName)
+  attackMob(dx, dy, dz, mobName)
 end
