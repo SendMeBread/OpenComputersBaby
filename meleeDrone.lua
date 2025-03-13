@@ -45,13 +45,10 @@ end
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
-    drone.swing(getFacing(ms_x, ms_y, ms_z))
+    drone.swing(getFacing(ms_x-1, ms_y, ms_z))
   end
 end
 while true do
-  _, _, mx, my, mz, mobName = computer.pullSignal("motion")
-  dx = tonumber(mx) or 0
-  dy = tonumber(my) or 0
-  dz = tonumber(mz) or 0
+  _, _, dx, dy, dz, mobName = computer.pullSignal("motion")
   attackMob(dx, dy, dz, mobName)
 end
