@@ -33,7 +33,7 @@ function getFacing(x, y, z)
     else
       return 4
     end
-  elseif currx < currz then
+  else
     if currz >= 0 then
       return 3
     else
