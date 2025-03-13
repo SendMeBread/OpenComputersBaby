@@ -32,5 +32,5 @@ while true do
   dx = tonumber(mx) or 0
   dy = tonumber(my) or 0
   dz = tonumber(mz) or 0
-  attackMob(dx | 0, dy | 0, dz | 0, mobName)
+  attackMob(dx, dy, dz, mobName)
 end
