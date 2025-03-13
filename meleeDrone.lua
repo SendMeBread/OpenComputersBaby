@@ -21,12 +21,13 @@ function isMobHostile(entName)
   end
   return false
 end
-function attackMob(address, id, ms_x, ms_y, ms_z, name)
+function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
     drone.swing()
   end
 end
 while true do
-  event.listen("motion", attackMob)
+  local _, _, x, y, z, mobName = computer.pullSignal("motion")
+  attackMob(x, y, z, mobName)
 end
