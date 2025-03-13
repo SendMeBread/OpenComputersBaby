@@ -13,6 +13,9 @@ local hostileMobs = {
   "Witch", "Wither", "Wither Skeleton",
   "Zombie", "Zombie Pigman", "Zombie Villager"
 }
+function round(num, places)
+  return tonumber(string.format("%" .. places .. "f", num))
+end
 function isMobHostile(entName)
   for _, hostMob in ipairs(hostileMobs) do
     if entName == hostMob then
@@ -32,5 +35,5 @@ while true do
   dx = tonumber(mx) or 0
   dy = tonumber(my) or 0
   dz = tonumber(mz) or 0
-  attackMob(dx, dy, dz, mobName)
+  attackMob(round(dx, 0), round(dy, 0), round(dz, 0), mobName)
 end
