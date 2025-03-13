@@ -27,7 +27,7 @@ end
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
-    drone.swing()
+    drone.swing(3)
   end
 end
 while true do
