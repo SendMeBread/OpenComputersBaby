@@ -28,6 +28,9 @@ function attackMob(ms_x, ms_y, ms_z, name)
   end
 end
 while true do
-  _, _, x, y, z, mobName = computer.pullSignal("motion")
-  attackMob(x | 0, y | 0, z | 0, mobName)
+  _, _, mx, my, mz, mobName = computer.pullSignal("motion")
+  dx = tonumber(mx) or 0
+  dy = tonumber(my) or 0
+  dz = tonumber(mz) or 0
+  attackMob(dx | 0, dy | 0, dz | 0, mobName)
 end
