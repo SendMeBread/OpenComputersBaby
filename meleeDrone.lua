@@ -1,27 +1,32 @@
 local drone = component.proxy(component.list('drone')())
-local event = component.proxy(component.list('event')())
 local ms = component.proxy(component.list('motion_sensor')())
 ms.setSensitivity(0.2)
 local hostileMobs = {
-  "minecraft:blaze",
-  "minecraft:cave_spider", "minecraft:creeper",
-  "minecraft:elder_guardian", "minecraft:ender_dragon", "minecraft:enderman", "minecraft:endermite", "minecraft:evocation_illager",
-  "minecraft:ghast", "minecraft:giant", "minecraft:guardian",
-  "minecraft:husk",
-  "minecraft:illusion_illager",
-  "minecraft:magma_cube",
-  "minecraft:shulker", "minecraft:silverfish", "minecraft:skeleton", "minecraft:slime", "minecraft:spider", "minecraft:stray",
-  "minecraft:vex", "minecraft:vindication_illager",
-  "minecraft:witch", "minecraft:wither", "minecraft:wither_skeleton",
-  "minecraft:zombie", "minecraft:zombie_pigman", "minecraft:zombie_villager"
+  "Blaze",
+  "Cave Spider", "Creeper",
+  "Elder Guardian", "Ender Dragon", "Enderman", "Endermite", "Evoker",
+  "Ghast", "Guardian",
+  "Husk",
+  "Magma Cube",
+  "Shulker", "Silverfish", "Skeleton", "Slime", "Spider", "Stray",
+  "Vex", "Vindicator",
+  "Witch", "Wither", "Wither Skeleton",
+  "Zombie", "Zombie Pigman", "Zombie Villager"
 }
-function attackMob(ms_x, ms_y, ms_z, name)
-  if isMobHostile(ms_x, ms_y, ms_z) then
+function isMobHostile(entName)
+  for _, hostMob in ipairs(hostileMobs) do
+    if entName == hostMob then
+      return true
+    end
+  end
+  return false
+end
+function attackMob(address, id, ms_x, ms_y, ms_z, name)
+  if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
     drone.swing()
   end
 end
 while true do
-  local _, x, y, z, entName = event.pull("motion")
-  print(entName)
+  event.listen("motion", attackMob)
 end
