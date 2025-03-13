@@ -26,15 +26,14 @@ function isMobHostile(entName)
   return false
 end
 function getFacing(x, y, z)
-  currx, curry, currz = nav.getPosition()
-  if currx >= currz then
-    if currx >= 0 then
+  if x >= z then
+    if x >= 0 then
       return 5
     else
       return 4
     end
   else
-    if currz >= 0 then
+    if z >= 0 then
       return 3
     else
       return 2
