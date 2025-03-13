@@ -44,8 +44,8 @@ end
     
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
-    drone.move(ms_x, ms_y, ms_z)
-    drone.swing(getFacing(ms_x-1, ms_y, ms_z))
+    drone.move(ms_x-1, ms_y, ms_z)
+    drone.swing(getFacing(ms_x, ms_y, ms_z))
   end
 end
 while true do
