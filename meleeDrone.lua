@@ -22,7 +22,7 @@ function isMobHostile(entName)
   end
   return false
 end
-function getFacing(x, y, z)
+local function setFacing(x, y, z)
   if x >= z then
     if x >= 0 then
       return 5
@@ -42,7 +42,7 @@ end
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x-1, ms_y, ms_z)
-    drone.swing(getFacing(ms_x, ms_y, ms_z))
+    drone.swing(setFacing(ms_x, ms_y, ms_z))
   end
 end
 while true do
