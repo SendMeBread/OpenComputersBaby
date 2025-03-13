@@ -28,6 +28,6 @@ function attackMob(ms_x, ms_y, ms_z, name)
   end
 end
 while true do
-  local _, _, x, y, z, mobName = computer.pullSignal("motion")
+  _, _, x, y, z, mobName = computer.pullSignal("motion")
   attackMob(x, y, z, mobName)
 end
