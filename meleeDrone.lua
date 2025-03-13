@@ -41,11 +41,13 @@ end
     
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
-    drone.move(ms_x-1, ms_y, ms_z)
+    drone.move(ms_x, ms_y, ms_z)
     drone.swing(setFacing(ms_x, ms_y, ms_z))
   end
 end
+local  = -1
 while true do
+  
   _, _, dx, dy, dz, mobName = computer.pullSignal("motion")
   attackMob(dx, dy, dz, mobName)
 end
