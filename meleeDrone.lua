@@ -42,6 +42,6 @@ function attackMob(ms_x, ms_y, ms_z, name)
   end
 end
 while true do
-  _, _, dx, dy, dz = radar.getMobs()
+  _, _, dx, dy, dz = radar.getMobs()[1]
   attackMob(dx, dy, dz, mobName)
 end
