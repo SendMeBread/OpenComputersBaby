@@ -23,17 +23,23 @@ function isMobHostile(entName)
   return false
 end
 local function setFacing(x, y, z)
-  if x >= z then
-    if x >= 0 then
-      return 5
-    else
-      return 4
-    end
+  if y > 0 then
+    return 1
+  elseif y < 0 then
+    return 0
   else
-    if z >= 0 then
-      return 3
+    if x >= z then
+      if x >= 0 then
+        return 5
+      else
+        return 4
+      end
     else
-      return 2
+      if z >= 0 then
+        return 3
+      else
+        return 2
+      end
     end
   end
 end
