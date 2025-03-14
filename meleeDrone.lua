@@ -1,7 +1,5 @@
 local drone = component.proxy(component.list('drone')())
-local nav = component.proxy(component.list('nagigation')())
-local ms = component.proxy(component.list('motion_sensor')())
-ms.setSensitivity(0.0)
+local radar = component.proxy(component.list('radar')())
 local hostileMobs = {
   "Blaze",
   "Cave Spider", "Creeper",
@@ -37,17 +35,13 @@ local function setFacing(x, y, z)
     end
   end
 end
-    
-    
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
     drone.swing(setFacing(ms_x, ms_y, ms_z))
   end
 end
-local  = -1
 while true do
-  
-  _, _, dx, dy, dz, mobName = computer.pullSignal("motion")
+  _, _, dx, dy, dz = radar.getMobs()
   attackMob(dx, dy, dz, mobName)
 end
