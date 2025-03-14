@@ -1,5 +1,12 @@
 local drone = component.proxy(component.list('drone')())
+local gen = component.proxy(component.list('generator')())
 local radar = component.proxy(component.list('radar')())
+drone.move(0, 1, 0)
+for slot=2,4,1 do
+  drone.select(slot)
+  gen.insert(64)
+end
+drone.select(1)
 local hostileMobs = {
   "Blaze",
   "Cave Spider", "Creeper",
@@ -42,6 +49,8 @@ function attackMob(ms_x, ms_y, ms_z, name)
   end
 end
 while true do
-  _, _, dx, dy, dz = radar.getMobs()[1]
-  attackMob(dx, dy, dz, mobName)
+  mob = radar.getMobs()[1]
+  if mob ~= nil then
+    attackMob(mob.x, mob.y, mob.z, mob.name)
+  end
 end
