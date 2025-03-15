@@ -5,12 +5,16 @@ drone.move(0, 1, 0)
 drone.setLightColor(0xFFFFFF)
 local hostileMobs = {
   "Blaze",
-  "Cave Spider", "Creeper",
+  "Cave Spider", "Cockatrice", "Creeper", "Cyclops",
+  "Death Worm",
   "Elder Guardian", "Ender Dragon", "Enderman", "Endermite", "Evoker",
-  "Ghast", "Guardian",
+  "Fire Dragon",
+  "Ghast", "Gorgon", "Guardian",
   "Husk",
-  "Magma Cube",
-  "Shulker", "Silverfish", "Skeleton", "Slime", "Spider", "Stray",
+  "Ice Dragon",
+  "Magma Cube", "Myrmex",
+  "Shulker", "Silverfish", "Siren", "Skeleton", "Slime", "Spider", "Stray", "Stymphalian Bird",
+  "Troll"
   "Vex", "Vindicator",
   "Witch", "Wither", "Wither Skeleton",
   "Zombie", "Zombie Pigman", "Zombie Villager"
