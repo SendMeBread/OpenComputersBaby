@@ -42,7 +42,9 @@ function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
     if drone.swing(setFacing(ms_x, ms_y, ms_z)) == false then
-      drone.swing(0)
+      if drone.swing(0) == false then
+        drone.swing(1)
+      end
     end
   end
 end
