@@ -12,7 +12,7 @@ local hostileMobs = {
   "Ghast", "Gorgon", "Guardian",
   "Husk",
   "Ice Dragon",
-  "Magma Cube", "Myrmex",
+  "Magma Cube", "Myrmex Queen", "Myrmex Royal", "Myrmex Soldier", "Myrmex Sentinel", "Myrmex Worker",
   "Shulker", "Silverfish", "Siren", "Skeleton", "Slime", "Spider", "Stray", "Stymphalian Bird",
   "Troll",
   "Vex", "Vindicator",
