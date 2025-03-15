@@ -14,7 +14,7 @@ local hostileMobs = {
   "Ice Dragon",
   "Magma Cube", "Myrmex",
   "Shulker", "Silverfish", "Siren", "Skeleton", "Slime", "Spider", "Stray", "Stymphalian Bird",
-  "Troll"
+  "Troll",
   "Vex", "Vindicator",
   "Witch", "Wither", "Wither Skeleton",
   "Zombie", "Zombie Pigman", "Zombie Villager"
