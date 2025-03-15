@@ -28,7 +28,7 @@ function isMobHostile(entName)
   return false
 end
 local function setFacing(x, y, z)
-  if x >= z then
+  if x > z then
     if x > 0 then
       return 5
     else
@@ -44,13 +44,13 @@ local function setFacing(x, y, z)
 end
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
-    drone.move(0, ms_y, 0)
+    drone.move(ms_x, ms_y, ms_z-15)
     drone.use(setFacing(ms_x, ms_y, ms_z))
   end
 end
 while true do
   if gen.count() == 0 then
-    for slot = 2,4,1 do
+    for slot = 3,4,1 do
       drone.select(slot)
       gen.insert(64)
     end
