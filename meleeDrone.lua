@@ -46,7 +46,7 @@ end
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
-    if drone.detect(setFacing) or drone.detect(0) == true then
+    if drone.detect(setFacing(ms_x, ms_y, ms_z)) or drone.detect(0) == true then
       local mobIndex = mobIndex + 1
     end
     if drone.swing(setFacing(ms_x, ms_y, ms_z)) == false then
