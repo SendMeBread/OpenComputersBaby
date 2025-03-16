@@ -1,7 +1,7 @@
 local drone = component.proxy(component.list('drone')())
 local gen = component.proxy(component.list('generator')())
 local radar = component.proxy(component.list('radar')())
-drone.move(0, 1, 0)
+drone.move(0, 4, 0)
 drone.setLightColor(0xFFFFFF)
 local hostileMobs = {
   "Blaze",
