@@ -1,7 +1,8 @@
 local drone = component.proxy(component.list('drone')())
 local gen = component.proxy(component.list('generator')())
 local radar = component.proxy(component.list('radar')())
-drone.move(0, 10, 0)
+local mobIndex = 1
+drone.move(0, 6, 0)
 drone.setLightColor(0xFFFFFF)
 local hostileMobs = {
   "Blaze",
@@ -45,6 +46,8 @@ end
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
     drone.move(ms_x, ms_y, ms_z)
+    if drone.detect(setFacing) or drone.detect(0) == true then
+      local mobIndex = mobIndex + 1
     if drone.swing(setFacing(ms_x, ms_y, ms_z)) == false then
       if drone.swing(0) == false then
         drone.swing(1)
@@ -60,7 +63,7 @@ while true do
     end
     drone.select(1)
   end
-  mob = radar.getMobs()[1]
+  mob = radar.getMobs()[mobIndex]
   if mob ~= nil then
     drone.setLightColor(0xFF0000)
     attackMob(mob.x, mob.y+1, mob.z, mob.name)
