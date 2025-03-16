@@ -69,6 +69,6 @@ while true do
     drone.setLightColor(0xFF0000)
     attackMob(mob.x, mob.y+1, mob.z, mob.name)
   else
-    drone.setColor(0xFFFFFF)
+    drone.setLightColor(0xFFFFFF)
   end
 end
