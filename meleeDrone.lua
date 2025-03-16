@@ -1,7 +1,7 @@
 local drone = component.proxy(component.list('drone')())
 local gen = component.proxy(component.list('generator')())
 local radar = component.proxy(component.list('radar')())
-drone.move(0, 1, 0)
+drone.move(0, 10, 0)
 drone.setLightColor(0xFFFFFF)
 local hostileMobs = {
   "Blaze",
@@ -63,7 +63,7 @@ while true do
   mob = radar.getMobs()[1]
   if mob ~= nil then
     drone.setLightColor(0xFF0000)
-    attackMob(mob.x, mob.y, mob.z, mob.name)
+    attackMob(mob.x, mob.y+1, mob.z, mob.name)
   else
     drone.setColor(0xFFFFFF)
   end
