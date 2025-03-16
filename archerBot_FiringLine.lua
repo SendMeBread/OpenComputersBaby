@@ -115,7 +115,6 @@ while true do
     else
       mob = radar.getMobs()[1]
     end
-    end
-    robot.setColor(0xFFFFFF)
   end
+    robot.setColor(0xFFFFFF)
 end
