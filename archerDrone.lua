@@ -12,7 +12,7 @@ local hostileMobs = {
   "Ghast", "Gorgon", "Guardian",
   "Husk",
   "Ice Dragon",
-  "Magma Cube", "Myrmex",
+  "Magma Cube", "Myrmex Queen", "Myrmex Royal", "Myrmex Soldier", "Myrmex Sentinel", "Myrmex Worker",
   "Shulker", "Silverfish", "Siren", "Skeleton", "Slime", "Spider", "Stray", "Stymphalian Bird",
   "Troll",
   "Vex", "Vindicator",
@@ -44,7 +44,7 @@ local function setFacing(x, y, z)
 end
 function attackMob(ms_x, ms_y, ms_z, name)
   if isMobHostile(name) then
-    drone.move(ms_x, ms_y, ms_z-15)
+    drone.move(ms_x, ms_y, ms_z-10)
     drone.use(setFacing(ms_x, ms_y, ms_z))
   end
 end
