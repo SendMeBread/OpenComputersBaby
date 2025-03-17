@@ -7,10 +7,12 @@ rotations = 0
 redstone.setOutput(3, 1)
 while rotations < 1 do
   while sign.getValue() ~= "left 90" do
-    robot.move(1)
+    robot.up()
     sticky.pull()
-    robot.move(5)
-    robot.move(0)
+    robot.turnLeft()
+    robot.forward()
+    robot.turnRight()
+    sticky.push()
   end
-  rotions = rotations + 1
+  rotations = rotations + 1
 end
