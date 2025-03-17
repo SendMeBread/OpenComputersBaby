@@ -9,6 +9,6 @@ while rotations < 5 do
   while sign.getValue() ~= keyphrase do
     robot.forward()
   end
-  robot.turnAround()
+  robot.turnLeft()
   rotations = rotations + 1
 end
