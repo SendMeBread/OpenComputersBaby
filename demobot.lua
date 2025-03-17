@@ -12,7 +12,7 @@ while rotations < 1 do
     robot.turnLeft()
     robot.forward()
     robot.turnRight()
-    sticky.push()
+    robot.down()
   end
   rotations = rotations + 1
 end
