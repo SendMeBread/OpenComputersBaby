@@ -2,12 +2,13 @@ local robot = component.proxy(component.list("robot")())
 local redstone = component.proxy(component.list("redstone")())
 local sticky = component.proxy(component.list("piston"()))
 local sign = component.proxy(component.list("sign")())
-local keyphrase = "left 90"
-rotations = 0
-redstone.setOutput(3, 1)
-while rotations < 1 do
-  while sign.getValue() ~= "left 90" do
+local keyphrase = "turn left\n\n\n"
+local rotations = 0
+redstone.setOutput({0, 0, 0, 1, 1})
+while rotations < 5 do
+  while sign.getValue() ~= keyphrase do
     robot.forward()
   end
+  robot.turnAround()
   rotations = rotations + 1
 end
