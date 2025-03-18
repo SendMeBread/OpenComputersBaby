@@ -1,13 +1,19 @@
 local robot = component.proxy(component.list("robot")())
 local redstone = component.proxy(component.list("redstone")())
-local sticky = component.proxy(component.list("piston"()))
 local sign = component.proxy(component.list("sign")())
+local inventory = component.proxy(component.list("inventory_controller")())
+local slot = 1
 local keyphrase = "turn left\n\n\n"
 local rotations = 0
 redstone.setOutput({0, 0, 0, 1, 1})
-while rotations < 5 do
+while rotations < 9 do
   while sign.getValue() ~= keyphrase do
     robot.forward()
+    if robot.count() == 0 then
+      slot = slot + 1
+    end
+    robot.select(slot)
+    inventory.dropIntoSlot(1)
   end
   robot.turnLeft()
   rotations = rotations + 1
