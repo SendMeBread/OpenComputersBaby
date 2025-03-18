@@ -13,10 +13,10 @@ while rotations < 9 do
       slot = slot + 1
     end
     robot.select(slot)
-    robot.turnRight()
+    robot.turn(true)
     inventory.dropIntoSlot(3, 1)
-    robot.turnLeft()
+    robot.turn(false)
   end
-  robot.turnLeft()
+  robot.turn(false)
   rotations = rotations + 1
 end
