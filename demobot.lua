@@ -5,7 +5,7 @@ local inventory = component.proxy(component.list("inventory_controller")())
 local slot = 1
 local keyphrase = "turn left\n\n\n"
 local rotations = 0
-redstone.setOutput({0, 0, 0, 1, 0})
+redstone.setOutput({0, 0, 1, 0, 0})
 while rotations < 9 do
   while sign.getValue() ~= keyphrase do
     robot.forward()
@@ -13,7 +13,9 @@ while rotations < 9 do
       slot = slot + 1
     end
     robot.select(slot)
-    inventory.dropIntoSlot(4, 1)
+    robot.turnRight()
+    inventory.dropIntoSlot(3, 1)
+    robot.turnLeft()
   end
   robot.turnLeft()
   rotations = rotations + 1
